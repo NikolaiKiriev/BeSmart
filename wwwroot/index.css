@@ -1,0 +1,22 @@
+﻿div{
+    border:1px solid black;
+}
+#ConteinerDiv{
+    height:300px;
+    width:70%;
+    margin:auto;
+}
+#btnDiv{
+    height:auto;
+    width:auto;
+    margin:auto;
+    padding-left:41%;
+}
+th{
+    border:0.5px solid black;
+    border-radius:5px;
+}
+td {
+    border: 0.5px solid black;
+    border-radius: 5px;
+}

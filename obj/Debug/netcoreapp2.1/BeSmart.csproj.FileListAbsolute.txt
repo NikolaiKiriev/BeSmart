@@ -1,0 +1,14 @@
+c:\users\nicko\source\repos\BeSmart\BeSmart\bin\Debug\netcoreapp2.1\BeSmart.deps.json
+c:\users\nicko\source\repos\BeSmart\BeSmart\bin\Debug\netcoreapp2.1\BeSmart.runtimeconfig.json
+c:\users\nicko\source\repos\BeSmart\BeSmart\bin\Debug\netcoreapp2.1\BeSmart.runtimeconfig.dev.json
+c:\users\nicko\source\repos\BeSmart\BeSmart\bin\Debug\netcoreapp2.1\BeSmart.dll
+c:\users\nicko\source\repos\BeSmart\BeSmart\bin\Debug\netcoreapp2.1\BeSmart.pdb
+c:\users\nicko\source\repos\BeSmart\BeSmart\obj\Debug\netcoreapp2.1\BeSmart.csprojAssemblyReference.cache
+c:\users\nicko\source\repos\BeSmart\BeSmart\obj\Debug\netcoreapp2.1\BeSmart.csproj.CoreCompileInputs.cache
+c:\users\nicko\source\repos\BeSmart\BeSmart\obj\Debug\netcoreapp2.1\BeSmart.RazorAssemblyInfo.cache
+c:\users\nicko\source\repos\BeSmart\BeSmart\obj\Debug\netcoreapp2.1\BeSmart.RazorAssemblyInfo.cs
+c:\users\nicko\source\repos\BeSmart\BeSmart\obj\Debug\netcoreapp2.1\BeSmart.AssemblyInfoInputs.cache
+c:\users\nicko\source\repos\BeSmart\BeSmart\obj\Debug\netcoreapp2.1\BeSmart.AssemblyInfo.cs
+c:\users\nicko\source\repos\BeSmart\BeSmart\obj\Debug\netcoreapp2.1\BeSmart.RazorTargetAssemblyInfo.cache
+c:\users\nicko\source\repos\BeSmart\BeSmart\obj\Debug\netcoreapp2.1\BeSmart.dll
+c:\users\nicko\source\repos\BeSmart\BeSmart\obj\Debug\netcoreapp2.1\BeSmart.pdb
