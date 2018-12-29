@@ -9,6 +9,7 @@ namespace BeSmart
     {
         public int OrderID { get; set; }
         public int CustomerID  { get; set; }
+        public int ProductID { get; set; }
         public DateTime OrderDate { get; set; }
         public DateTime OrderRequiredDate { get; set; }
         public DateTime ShippedDate { get; set; }

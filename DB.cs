@@ -107,7 +107,7 @@ namespace BeSmart
         public static List<Order> GetOrders()
         {
             List<Order> orders = new List<Order>();
-            int orderID, customerID;
+            int orderID, customerID, productID;
             DateTime orderDate, orderRequiredDate, shippedDate;
             decimal freight;
             string shipAddress, shipTown, shipPostalcode;
@@ -120,17 +120,19 @@ namespace BeSmart
                 {
                     orderID = dr.IsDBNull(0) ? throw new Exception("null OrderID") : dr.GetInt32(0);
                     customerID = dr.IsDBNull(1) ? throw new Exception("null customerID") : dr.GetInt32(1);
-                    orderDate = dr.IsDBNull(2) ? throw new Exception("null orderDate") : dr.GetDateTime(2);
-                    orderRequiredDate = dr.IsDBNull(3) ? throw new Exception("null OrderRequiredDate") : dr.GetDateTime(3);
-                    shippedDate = dr.IsDBNull(4) ? throw new Exception("null ShippedDate") : dr.GetDateTime(4);
-                    freight = dr.IsDBNull(5) ? (decimal)0 : dr.GetDecimal(5);
-                    shipAddress = dr.IsDBNull(6) ? "no address" : dr.GetString(6);
-                    shipTown = dr.IsDBNull(7) ? "no ShipTown" : dr.GetString(7);
-                    shipPostalcode = dr.IsDBNull(8) ? "no postalCode!" : dr.GetString(8);
+                    productID = dr.IsDBNull(2) ? throw new Exception("null ProductID") : dr.GetInt32(2);
+                    orderDate = dr.IsDBNull(3) ? throw new Exception("null orderDate") : dr.GetDateTime(3);
+                    orderRequiredDate = dr.IsDBNull(4) ? throw new Exception("null OrderRequiredDate") : dr.GetDateTime(4);
+                    shippedDate = dr.IsDBNull(5) ? throw new Exception("null ShippedDate") : dr.GetDateTime(5);
+                    freight = dr.IsDBNull(6) ? (decimal)0 : dr.GetDecimal(6);
+                    shipAddress = dr.IsDBNull(7) ? "no address" : dr.GetString(7);
+                    shipTown = dr.IsDBNull(8) ? "no ShipTown" : dr.GetString(8);
+                    shipPostalcode = dr.IsDBNull(9) ? "no postalCode!" : dr.GetString(9);
                     Order order = new Order()
                     {
                         OrderID = orderID,
                         CustomerID = customerID,
+                        ProductID = productID,
                         OrderDate = orderDate,
                         OrderRequiredDate = orderRequiredDate,
                         ShippedDate = shippedDate,
