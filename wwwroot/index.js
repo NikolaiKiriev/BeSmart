@@ -1,6 +1,7 @@
 ﻿var tblStr = "";
 
 function RenderCustomersTable() {
+    $("#PageName").html("טבלת לקוחות")
     $.get("api/customers", function (data, status) {
         if (status == "success") {
             var customers = data;
@@ -27,6 +28,7 @@ function RenderCustomersTable() {
     })
 }
 function RenderOrdersTable() {
+    $("#PageName").html("טבלת הזמנות")
     $.get("/api/Orders", function (data, status) {
         if (status == "success") {
             var Orders = data;
@@ -52,6 +54,7 @@ function RenderOrdersTable() {
     })
 }
 function RenderProductsTable() {
+    $("#PageName").html("טבלת מוצרים קיימים")
     $.get("/api/Products", function (data, status) {
         if (status == "success") {
             var products = data;
@@ -75,10 +78,25 @@ function RenderProductsTable() {
     })
 }
 function RenderAddTable() {
+    $("#PageName").html("הוספת מוצר חדש");
     tblStr = "<table>";
-    tblStr +="<tr><td>שם המוצר</td><td>מחיר</td><td>כמות זמינה</td><td>כמות בהזמנה</td><td>רמת הזמנה חוזרת</td></tr>"
+    tblStr += "<tr><td>שם המוצר</td><td>מחיר</td><td>כמות זמינה</td><td>כמות בהזמנה</td><td>רמת הזמנה חוזרת</td></tr>";
+    tblStr += "<tr><td><input id='ProductName' type='text' /></td><td><input id='Price' type='text' /></td><td><input id='UnitsInStock' type='text' /></td>";
+    tblStr += "<td><input id='UnitsInOrder' type='text' /></td></tr>";
+    tblStr += "<tr><td><button onclick='PostNewProduct()' id='AddNewProductBtn'>Add!</button></td></tr>";
+    tblStr += "</table>";
+    $("#ConteinerDiv").html(tblStr);
+    
     
 }
 function PostNewProduct() {
-
+    var testStr = "";
+    testStr += $("#ProductName").val();
+    testStr += "<br>";
+    testStr += $("#Price").val();
+    testStr += "<br>";
+    testStr += $("#UnitsInStock").val();
+    testStr += "<br>";
+    testStr += $("#UnitsInOrder").val();
+    $("#ConteinerDiv").html(testStr+ "added");
 }

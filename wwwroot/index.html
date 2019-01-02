@@ -10,32 +10,18 @@
 <body>
 
     <div id="BannerDiv">
-        <span style="margin-left:49%">Banner</span>
+        <span>Banner</span>
+        <h1>Welcome to BeSmart! Admin Access</h1>
     </div>
-    <center><h1>Welcome to BeSmart! Admin Access</h1></center>
-
     <div id="btnDiv">
         <button id="CustomerBtn" onclick="RenderCustomersTable()">CustomersTbl</button>
         <button id="OrderBtn" onclick="RenderOrdersTable()">OrdersTbl</button>
         <button id="ProductBtn" onclick="RenderProductsTable()">productsTbl</button>
-        <button id="AddProduct" onclick="">Add new Product</button>
+        <button id="AddProduct" onclick="RenderAddTable()">Add new Product</button>
+        <h1 id="PageName"></h1>
     </div>
     <div id="ConteinerDiv">
-        <table>
-            <tr>
-                <th>שם המוצר</th>
-                <th>מחיר</th>
-                <th>כמות</th>
-                <th>כמות בהזמנה</th>
-            </tr>
-            <tr>
-                <td><input id="ProductName" type="text" /></td>
-                <td><input id="Price" type="text" /></td>
-                <td><input id="UnitsInStock" type="text" /></td>
-                <td><input id="UnitsInOrder" type="text" /></td>
-            </tr>
-            <tr><td><button onclick="PostNewProduct()" id="AddNewProductBtn">Add!</button></td></tr>
-        </table>
+
 
     </div>
 

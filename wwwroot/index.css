@@ -16,8 +16,16 @@ th{
 td {
     border: 0.5px solid black;
     border-radius: 5px;
+    
 }
 table{
     overflow:auto;
     margin:auto;
+}
+h1{
+    margin:auto;
+}
+div{
+    border:1px solid black;
+
 }

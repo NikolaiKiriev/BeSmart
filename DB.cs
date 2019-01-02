@@ -97,7 +97,6 @@ namespace BeSmart
                     products.Add(product);
                 }
             }
-
             return products;
         }
         //------------ORDERS-----------------//
