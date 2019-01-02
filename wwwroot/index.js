@@ -1,19 +1,10 @@
-﻿var tblStr = "<table>";
-$(function () {
-    $("#CustomerBtn").click(RenderCustomersTable())
-});
-$("#OrderBtn").click(function () {
-    $("#ConteinerDiv").html("Order");
-});
-$("#ProductBtn").click(function () {
-    $("#ConteinerDiv").html("Product");
-});
-
+﻿var tblStr = "";
 
 function RenderCustomersTable() {
     $.get("api/customers", function (data, status) {
         if (status == "success") {
             var customers = data;
+            tblStr = "<table>";
             tblStr += "<tr><th>ID</th><th>FirstName</th><th>LastName</th><th>Address</th><th>City</th><th>PostalCode</th><th>Phone</th><th>Fax</th></tr>";
             for (var i = 0; i < customers.length; i++) {
                 customer = customers[i];
@@ -35,12 +26,12 @@ function RenderCustomersTable() {
         }
     })
 }
-
 function RenderOrdersTable() {
     $.get("/api/Orders", function (data, status) {
         if (status == "success") {
             var Orders = data;
-            tblStr += "<tr><td>ID</td><td>CustomerID</td><td>ProductID</td><td>OrderDate</td><td>OrderRequiredDate</td><td>ShippedDate</td><td>Freight</td><td>ShipAddress</td><td>ShipTown</td><td>ShipPostalCode</td></tr>";
+            tblStr = "<table>";
+            tblStr += "<tr><td>מספר הזמנה</td><td>מספר לקוח</td><td>מספר מוצר</td><td>תאריך הזמנה</td><td>תאריך לקיחה</td><td>תאריך שילוח</td><td>דמי הובלה</td><td>כתובת משלוח</td><td>עיר משלוח</td><td>קוד דואר</td></tr>";
             for (var i = 0; i < Orders.length; i++) {
                 order = Orders[i];
                 var OrderID = order.orderID;
@@ -50,11 +41,44 @@ function RenderOrdersTable() {
                 var OrderRequiredDate = order.orderRequiredDate;
                 var ShippedDate = order.shippedDate;
                 var Freight = order.freight;
-                var ShippedAddress = order.shippedAddress;
+                var ShippedAddress = order.shipAddress;
                 var ShipTown = order.shipTown;
                 var ShipPostalCode = order.shipPostalCode;
-                tblStr += "<tr><td>" + OrderID + "</td><td>" + CustomerID + "</td><td>" + ProductID + "</td><td>"+OrderDate+"</td><td>"+OrderRequiredDate+"</td><td>"+ShippedDate+"</td><td>"+Freight+"</td><td>"+ShippedAddress+"</td><td>"+ShipTown+"</td><td>"+ShipPostalCode+"</td></tr>";
+                tblStr += "<tr><td>" + OrderID + "</td><td>" + CustomerID + "</td><td>" + ProductID + "</td><td>" + OrderDate + "</td><td>" + OrderRequiredDate + "</td><td>" + ShippedDate + "</td><td>" + Freight + "</td><td>" + ShippedAddress + "</td><td>" + ShipTown + "</td><td>" + ShipPostalCode + "</td></tr>";
             }
+            tblStr += "</table>";
+            $("#ConteinerDiv").html(tblStr);
         }
     })
+}
+function RenderProductsTable() {
+    $.get("/api/Products", function (data, status) {
+        if (status == "success") {
+            var products = data;
+            tblStr = "<table>";
+            tblStr += "<tr><td>ProductID</td><td>ProductName</td><td>Price</td><td>UnitsInStock</td><td>UnitsInOrder</td><td>ReorderLevel</td><td>Discontinued</td></tr>"
+            for (var i = 0; i < products.length; i++) {
+                product = products[i];
+                var productID = product.productID;
+                var productName = product.productName;
+                var price = product.price;
+                var unitsInStock = product.unitsInStock;
+                var unitsInOrder = product.unitsInOrder;
+                var reorderLevel = product.reorderLevel;
+                var discontinued = product.discontinued;
+
+                tblStr += "<tr><td>" + productID + "</td><td>" + productName + "</td><td>" + price + "</td><td>" + unitsInStock + "</td><td>" + unitsInOrder + "</td><td>" + reorderLevel + "</td><td>" + discontinued + "</td></tr>";
+            };
+            tblStr += "</table>";
+            $("#ConteinerDiv").html(tblStr);
+        }
+    })
+}
+function RenderAddTable() {
+    tblStr = "<table>";
+    tblStr +="<tr><td>שם המוצר</td><td>מחיר</td><td>כמות זמינה</td><td>כמות בהזמנה</td><td>רמת הזמנה חוזרת</td></tr>"
+    
+}
+function PostNewProduct() {
+
 }

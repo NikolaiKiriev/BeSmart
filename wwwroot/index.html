@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>BeSmart</title>
+    <title>Admin</title>
     <link href="index.css" rel="stylesheet" />
     <script src="jquery-3.3.1.min.js"></script>
     <script src="index.js"></script>
@@ -12,14 +12,30 @@
     <div id="BannerDiv">
         <span style="margin-left:49%">Banner</span>
     </div>
-    <center><h1>Welcome to BeSmart!</h1></center>
+    <center><h1>Welcome to BeSmart! Admin Access</h1></center>
+
     <div id="btnDiv">
-        <button id="CustomerBtn">CustomersTbl</button>
-        <button id="OrderBtn">OrdersTbl</button>
-        <button id="ProductBtn">productsTbl</button>
+        <button id="CustomerBtn" onclick="RenderCustomersTable()">CustomersTbl</button>
+        <button id="OrderBtn" onclick="RenderOrdersTable()">OrdersTbl</button>
+        <button id="ProductBtn" onclick="RenderProductsTable()">productsTbl</button>
+        <button id="AddProduct" onclick="">Add new Product</button>
     </div>
     <div id="ConteinerDiv">
-
+        <table>
+            <tr>
+                <th>שם המוצר</th>
+                <th>מחיר</th>
+                <th>כמות</th>
+                <th>כמות בהזמנה</th>
+            </tr>
+            <tr>
+                <td><input id="ProductName" type="text" /></td>
+                <td><input id="Price" type="text" /></td>
+                <td><input id="UnitsInStock" type="text" /></td>
+                <td><input id="UnitsInOrder" type="text" /></td>
+            </tr>
+            <tr><td><button onclick="PostNewProduct()" id="AddNewProductBtn">Add!</button></td></tr>
+        </table>
 
     </div>
 
